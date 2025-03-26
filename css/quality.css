@@ -1,0 +1,261 @@
+/* 品质评价页特有样式 */
+
+/* 品质介绍 */
+.quality-intro {
+  margin-bottom: 3rem;
+}
+
+/* 雷达图样式 */
+.radar-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+.radar-chart {
+  flex: 1 1 400px;
+  position: relative;
+  height: 400px;
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.radar-axis {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 1px;
+  background-color: #ddd;
+  transform-origin: left center;
+}
+
+.radar-axis span {
+  position: absolute;
+  right: -20px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: var(--tea-green);
+}
+
+.axis-1 {
+  transform: rotate(0deg);
+}
+
+.axis-2 {
+  transform: rotate(72deg);
+}
+
+.axis-3 {
+  transform: rotate(144deg);
+}
+
+.axis-4 {
+  transform: rotate(216deg);
+}
+
+.axis-5 {
+  transform: rotate(288deg);
+}
+
+.radar-area {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  background-color: rgba(58, 95, 11, 0.2);
+  border: 2px solid var(--tea-green);
+}
+
+.radar-legend {
+  flex: 1 1 300px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.radar-legend h3 {
+  margin-bottom: 1.5rem;
+}
+
+.radar-legend ul {
+  list-style: none;
+  padding: 0;
+}
+
+.radar-legend li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.hong { background-color: #e57373; }
+.tang { background-color: #d35400; }
+.wei { background-color: #8e44ad; }
+.ye { background-color: #27ae60; }
+.nai { background-color: #2980b9; }
+
+/* 年份对比模块 */
+.comparison-container {
+  position: relative;
+  display: flex;
+  margin: 3rem 0;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.comparison-card {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+}
+
+.comparison-card h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.comparison-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  margin-bottom: 1.5rem;
+}
+
+.comparison-card.left {
+  background-color: #f5f5f5;
+}
+
+.comparison-card.right {
+  background-color: white;
+}
+
+.compare-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--tea-green);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.feature-list i {
+  color: var(--tea-green);
+  margin-top: 0.2rem;
+}
+
+.feature-list.warning i {
+  color: #e74c3c;
+}
+
+/* 金花识别指南 */
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* 检测方法 */
+.testing-methods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.method-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform var(--transition-slow);
+}
+
+.method-card:hover {
+  transform: translateY(-5px);
+}
+
+.method-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--cream);
+  color: var(--tea-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.method-card h3 {
+  margin-bottom: 1rem;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 1024px) {
+  .testing-methods {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .testing-methods {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-container {
+    flex-direction: column;
+  }
+  
+  .compare-label {
+    top: 50%;
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+} 

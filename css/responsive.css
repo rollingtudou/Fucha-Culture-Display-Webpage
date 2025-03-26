@@ -1,0 +1,140 @@
+/* 平板电脑 (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* 卡片从3列变2列 */
+  .card-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 移动设备 (< 768px) */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  /* 导航汉堡菜单 */
+  .burger-menu {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    gap: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-slow);
+    z-index: 999;
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* 卡片堆叠布局 */
+  .card-grid-3,
+  .card-grid-2,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* 轮播图高度调整 */
+  .slider-container {
+    height: 50vh;
+  }
+  
+  /* 水平滚动卡片 */
+  .scroll-cards {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .scroll-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    margin-right: 1rem;
+  }
+  
+  /* 表格变卡片 */
+  table {
+    display: block;
+  }
+  
+  tr {
+    display: block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+  }
+  
+  td, th {
+    display: block;
+    text-align: left;
+  }
+  
+  thead {
+    display: none;
+  }
+  
+  td {
+    position: relative;
+    padding-left: 50%;
+    border-bottom: 1px solid #eee;
+  }
+  
+  td:before {
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  
+  /* 为每个td添加标签 */
+  td:nth-of-type(1):before { content: "特性"; }
+  td:nth-of-type(2):before { content: "传统工艺"; }
+  td:nth-of-type(3):before { content: "现代工艺"; }
+}
+
+/* 小屏幕移动设备 (< 480px) */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 95%;
+  }
+  
+  .scroll-card {
+    flex: 0 0 95%;
+  }
+  
+  /* 隐藏非核心视觉元素 */
+  .decorative-element {
+    display: none;
+  }
+} 

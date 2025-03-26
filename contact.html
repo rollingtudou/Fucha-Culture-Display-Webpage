@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 - 茯茶文化</title>
+  <meta name="description" content="茯茶文化网站联系方式，欢迎通过电话、邮件或在线表单与我们交流。">
+  
+  <!-- 字体和样式链接同首页 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=HarmonyOS+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <!-- 联系页面特有样式 -->
+  <style>
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 3rem 0;
+    }
+    
+    .contact-info {
+      padding: 2rem;
+      background-color: white;
+      border-radius: var(--card-radius);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-info h3 {
+      margin-bottom: 1.5rem;
+      color: var(--tea-green);
+    }
+    
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--tea-green);
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-details h4 {
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-map {
+      height: 250px;
+      margin-top: 2rem;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+    }
+    
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .contact-form {
+      padding: 2rem;
+      background-color: white;
+      border-radius: var(--card-radius);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-form h3 {
+      margin-bottom: 1.5rem;
+      color: var(--tea-green);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: var(--tea-brown);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'HarmonyOS Sans', sans-serif;
+      transition: border-color 0.2s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--tea-green);
+      box-shadow: 0 0 0 2px rgba(58, 95, 11, 0.1);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background-color: var(--tea-green);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'HarmonyOS Sans', sans-serif;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+    
+    .submit-btn:hover {
+      background-color: var(--light-green);
+    }
+    
+    @media screen and (max-width: 768px) {
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏（同首页） -->
+  <nav id="main-nav">
+    <!-- 内容同首页，此处省略... -->
+  </nav>
+  
+  <!-- 页头 -->
+  <header class="page-header inner-page">
+    <div class="container">
+      <h1>联系我们</h1>
+    </div>
+  </header>
+  
+  <!-- 主内容区 -->
+  <main class="content-area">
+    <div class="container">
+      <section class="contact-intro">
+        <h2>期待您的反馈</h2>
+        <p>无论您对茯茶文化有任何疑问，或者希望了解更多产品信息，都欢迎通过以下方式与我们联系。我们的团队将竭诚为您提供专业的服务与解答。</p>
+      </section>
+      
+      <div class="contact-content">
+        <!-- 联系信息 -->
+        <div class="contact-info">
+          <h3>联系方式</h3>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>地址</h4>
+              <p>陕西省安康市紫阳县茯茶产业园区茯茶文化体验中心</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h4>电话</h4>
+              <p>400-888-XXXX（工作日 9:00-18:00）</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>电子邮件</h4>
+              <p>info@fuchaculture.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fab fa-weixin"></i>
+            </div>
+            <div class="contact-details">
+              <h4>微信公众号</h4>
+              <p>扫描下方二维码，关注获取最新茯茶资讯</p>
+              <!-- IMAGE PLACEHOLDER: 微信二维码（需120x120px） -->
+              <img class="qr-code" src="images/wechat-qr.png" alt="扫描关注茯茶文化微信公众号" style="width: 120px; height: 120px; margin-top: 0.5rem;">
+            </div>
+          </div>
+          
+          <div class="contact-map">
+            <!-- 地图嵌入占位 -->
+            <iframe src="https://map.baidu.com/search/安康市紫阳县/@?querytype=s&wd=紫阳县" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <!-- 联系表单 -->
+        <div class="contact-form">
+          <h3>在线留言</h3>
+          <form id="contactForm" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">您的姓名</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">电子邮箱</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">联系电话</label>
+              <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">主题</label>
+              <select id="subject" name="subject" class="form-control">
+                <option value="inquiry">产品咨询</option>
+                <option value="feedback">意见反馈</option>
+                <option value="cooperation">合作洽谈</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">留言内容</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">提交留言</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- 页脚（同首页） -->
+  <footer id="site-footer">
+    <!-- 内容同首页，此处省略... -->
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script>
+    // 表单提交处理
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // 简单表单验证
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+          
+          if (!name || !email || !message) {
+            alert('请填写必填字段');
+            return;
+          }
+          
+          // 这里可以添加表单提交到服务器的逻辑
+          // 示例：使用FormData和fetch API
+          const formData = new FormData(this);
+          
+          // 模拟提交
+          setTimeout(() => {
+            alert('感谢您的留言，我们将尽快回复！');
+            contactForm.reset();
+          }, 1000);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

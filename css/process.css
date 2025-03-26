@@ -1,0 +1,259 @@
+/* 工艺页特有样式 */
+
+/* 工艺介绍 */
+.process-intro {
+  margin-bottom: 3rem;
+}
+
+/* 时间轴样式 */
+.timeline {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.timeline-node {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2rem;
+  position: relative;
+}
+
+.marker-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--tea-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+.marker-line {
+  position: absolute;
+  width: 4px;
+  background-color: var(--tea-green);
+  top: 60px;
+  bottom: -4rem;
+  z-index: 1;
+}
+
+.timeline-node:last-child .marker-line {
+  display: none;
+}
+
+.timeline-content {
+  flex-grow: 1;
+}
+
+/* 工艺卡片样式 */
+.process-card {
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.process-header {
+  background-color: var(--cream);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.process-header h3 {
+  margin: 0;
+  color: var(--tea-green);
+}
+
+.process-tag {
+  background-color: var(--tea-green);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.process-image {
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.process-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.process-details {
+  padding: 1.5rem;
+}
+
+/* 标签页样式 */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--dark-brown);
+  position: relative;
+}
+
+.tab.active {
+  color: var(--tea-green);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--tea-green);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* 可折叠内容 */
+.collapsible {
+  margin-top: 1.5rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.collapsible h4 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+}
+
+.collapsible.open .collapsible-content {
+  max-height: 300px;
+}
+
+.collapsible.open h4 i {
+  transform: rotate(180deg);
+}
+
+/* 工艺对比表 */
+.process-comparison {
+  margin: 4rem 0;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--tea-green);
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover td {
+  background-color: #f9f9f9;
+}
+
+/* 视频容器 */
+.process-video {
+  margin: 4rem 0;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9比例 */
+  height: 0;
+  overflow: hidden;
+  margin-top: 2rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  .timeline-node {
+    flex-direction: column;
+  }
+  
+  .timeline-marker {
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .marker-line {
+    width: 100%;
+    height: 4px;
+    top: 50%;
+    left: 60px;
+    right: 0;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  
+  .process-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .process-tag {
+    margin-top: 0.5rem;
+  }
+} 

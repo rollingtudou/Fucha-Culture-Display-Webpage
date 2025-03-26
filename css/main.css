@@ -1,0 +1,259 @@
+/* 全局样式定义 */
+:root {
+  /* 主色系 */
+  --tea-green: #3A5F0B;
+  --tea-brown: #6F4E37;
+  --cream: #F5F5DC;
+  
+  /* 辅助颜色 */
+  --light-green: #8dbc5e;
+  --dark-brown: #4a3524;
+  --light-cream: #fffff2;
+  
+  /* 常用变量 */
+  --header-height: 80px;
+  --footer-height: 320px;
+  --card-radius: 8px;
+  --transition-slow: 0.3s ease;
+  --transition-fast: 0.15s ease;
+}
+
+/* 全局重置样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* 平滑滚动效果 */
+  font-size: 16px;
+}
+
+body {
+  font-family: 'HarmonyOS Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--dark-brown);
+  background-color: var(--light-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif SC', serif;
+  color: var(--tea-green);
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--tea-green);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--light-green);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 容器样式 */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* 通用卡片样式 */
+.card {
+  background-color: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--tea-green);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn:hover {
+  background-color: var(--light-green);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--tea-green);
+  color: var(--tea-green);
+}
+
+.btn-outline:hover {
+  background-color: var(--tea-green);
+  color: white;
+}
+
+/* 导航栏样式 */
+#main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--tea-green);
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--tea-green);
+  transition: width var(--transition-slow);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  height: 3px;
+  width: 100%;
+  background-color: var(--tea-green);
+  transition: all var(--transition-fast);
+}
+
+/* 页头样式 */
+.page-header {
+  position: relative;
+}
+
+.page-header.inner-page {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cream);
+  background-image: url('../images/tea-pattern-bg.png');
+  background-size: 200px;
+  background-blend-mode: overlay;
+}
+
+/* 页脚样式 */
+#site-footer {
+  background-color: var(--tea-green);
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-col h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--cream);
+}
+
+.footer-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.copyright {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+} 
